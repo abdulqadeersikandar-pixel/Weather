@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>
+            <i class="fa-solid fa-cloud-sun"></i>
+            Weather Dashboard
+        </h1>
+
+        <p>
+            Real-Time Weather • Hourly Forecast • 5-Day Forecast
+        </p>
+
+    </header>
+
+    <!-- Search -->
+
+    <section class="search-section">
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Search city..."
+            >
+
+            <button id="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+        </div>
+
+        <button id="locationBtn" class="location-btn">
+
+            <i class="fa-solid fa-location-crosshairs"></i>
+            My Location
+
+        </button>
+
+    </section>
+
+    <!-- Loading -->
+
+    <div id="loading" class="loading hidden">
+
+        <div class="spinner"></div>
+
+        <p>Loading weather...</p>
+
+    </div>
+
+    <!-- Error -->
+
+    <div id="error" class="error hidden"></div>
+
+    <!-- Empty -->
+
+    <div id="empty" class="empty">
+
+        <i class="fa-solid fa-cloud"></i>
+
+        <h2>Search a City</h2>
+
+        <p>
+            Enter any city name or use your current location.
+        </p>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <main id="weatherContainer" class="hidden">
+
+        <!-- Current Weather -->
+
+        <section class="current-weather">
+
+            <div class="left">
+
+                <h2 id="cityName">
+                    City
+                </h2>
+
+                <p id="todayDate">
+                    Today
+                </p>
+
+                <img
+                    id="weatherIcon"
+                    src=""
+                    alt="Weather Icon"
+                >
+
+                <h1 id="temperature">
+                    --°C
+                </h1>
+
+                <p id="description">
+                    Weather Description
+                </p>
+
+            </div>
+
+            <div class="right">
+
+                <div class="detail-card">
+
+                    <i class="fa-solid fa-temperature-half"></i>
+
+                    <h4>Feels Like</h4>
+
+                    <p id="feelsLike">
+                        --
+                    </p>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <h4>Humidity</h4>
+
+                    <p id="humidity">
+                        --
+                    </p>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <i class="fa-solid fa-wind"></i>
+
+                    <h4>Wind</h4>
+
+                    <p id="wind">
+                        --
+                    </p>
+
+                </div>
+
+                <div class="detail-card">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                    <h4>Pressure</h4>
+
+                    <p id="pressure">
+                        --
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Hourly Forecast -->
+
+        <section class="hourly-section">
+
+            <h2>
+
+                <i class="fa-regular fa-clock"></i>
+
+                Hourly Forecast
+
+            </h2>
+
+            <div
+                id="hourlyContainer"
+                class="hourly-grid">
+
+            </div>
+
+        </section>
+
+        <!-- 5 Day Forecast -->
+
+        <section class="forecast-section">
+
+            <h2>
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                5-Day Forecast
+
+            </h2>
+
+            <div
+                id="forecastContainer"
+                class="forecast-grid">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+
+            Powered by OpenWeather API
+
+        </p>
+
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
